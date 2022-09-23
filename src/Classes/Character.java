@@ -1,3 +1,5 @@
+package Classes;
+
 public class Character {
 
     private int id;
@@ -41,6 +43,7 @@ public class Character {
     }
 
     public void setAlive(boolean alive) {
+
         isAlive = alive;
     }
 }
