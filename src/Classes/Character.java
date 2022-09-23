@@ -1,3 +1,5 @@
+package Classes;
+
 public class Character {
 
     private int id;
