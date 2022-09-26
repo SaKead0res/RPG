@@ -2,10 +2,10 @@ package Classes;
 
 public class Character {
 
-    private int id;
-    private String name;
-    private int hp;
-    private boolean isAlive;
+    public int id;
+    public String name;
+    public int hp;
+    public boolean isAlive;
 
     public Character(int id, String name, int hp, boolean isAlive) {
         this.id = id;
@@ -43,7 +43,7 @@ public class Character {
     }
 
     public void setAlive(boolean alive) {
-
         isAlive = alive;
     }
+
 }
