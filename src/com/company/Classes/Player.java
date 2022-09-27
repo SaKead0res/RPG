@@ -47,4 +47,6 @@ public abstract class Player {
         isAlive = alive;
     }
 
+    public abstract int attack();
+
 }

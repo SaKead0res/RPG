@@ -1,6 +1,8 @@
 package com.company.Classes;
 
-public class Warrior extends Player {
+import com.company.Interfaces.Attacker;
+
+public class Warrior extends Player implements Attacker {
 
 
     private int stamina;
@@ -40,5 +42,15 @@ public class Warrior extends Player {
                 ", strength=" + strength +
                 '}';
 
+    }
+
+    @Override
+    public int attack() {
+        if (getStamina() >= 5) {
+            setStamina(getStamina() - 5);
+            return getStrength();
+        }
+        setStamina(getStamina() + 1);
+        return getStrength() / 2;
     }
 }
