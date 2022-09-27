@@ -1,6 +1,8 @@
 package com.company.Classes;
 
-public class Wizard extends Player {
+import com.company.Interfaces.Attacker;
+
+public class Wizard extends Player implements Attacker {
 
 
 
@@ -32,13 +34,22 @@ public class Wizard extends Player {
     @Override
     public String toString() {
         return "\n Wizard{" +
-                "id=" + getId +
-                ", name='" + name + '\'' +
-                ", hp=" + hp +
-                ", isAlive=" + isAlive +
+                "id=" + getId() +
+                ", name='" + getName() + '\'' +
+                ", hp=" + getHp() +
+                ", isAlive=" + isAlive() +
                 ", mana=" + mana +
                 ", intelligence=" + intelligence +
                 '}';
     }
 
+    @Override
+    public int attack() {
+        if (getMana() >= 5) {
+            setMana(getMana() - 5);
+            return getIntelligence();
+        }
+        setMana(getMana() + 1);
+        return 2;
+    }
 }

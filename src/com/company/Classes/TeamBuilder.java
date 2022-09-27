@@ -4,12 +4,10 @@ import java.util.ArrayList;
 
 public class TeamBuilder {
 
-    public TeamBuilder() {
-    }
-
     public static ArrayList<Player> createTeam(){
         ArrayList<Player> team = new ArrayList<Player>();
 
+        //el jugador puede escoger tamaño equipo
         for (int i = 0; i < 6; i++){
             int hp = (int) (Math.random()*(80-10+1)+10);
             int stamina = (int) (Math.random()*(50-10+1)+10);
