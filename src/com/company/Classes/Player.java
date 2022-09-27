@@ -1,13 +1,13 @@
-package Classes;
+package com.company.Classes;
 
-public class Character {
+public abstract class Player {
 
     private int id;
     private String name;
     private int hp;
     private boolean isAlive;
 
-    public Character(int id, String name, int hp, boolean isAlive) {
+    public Player(int id, String name, int hp, boolean isAlive) {
         this.id = id;
         this.name = name;
         this.hp = hp;
@@ -46,4 +46,5 @@ public class Character {
 
         isAlive = alive;
     }
+
 }
