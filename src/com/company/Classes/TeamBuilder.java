@@ -1,7 +1,10 @@
 package com.company.Classes;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class TeamBuilder {
 
@@ -30,9 +33,25 @@ public class TeamBuilder {
         return team;
     }
 
-    public static ArrayList<Player> importTeamCSV() {
+    public static ArrayList<Player> importTeamCSV() throws FileNotFoundException {
 
+        ArrayList<Player> importedTeam = new ArrayList<Player>();
 
+        File teamCSV = new File("importedTeam.csv");
+
+        Scanner fileReader = new Scanner(teamCSV);
+
+        fileReader.nextLine();
+        while (fileReader.hasNextLine()) {
+
+            String[] importedAtr = fileReader.nextLine().split(", ");
+
+            if(importedAtr[0].equals("Wizard")){
+                importedTeam.add(new Wizard(Integer.parseInt(importedAtr[1]), importedAtr[2], Integer.parseInt(importedAtr[3]),
+                        true, Integer.parseInt(importedAtr[5]), Integer.parseInt(importedAtr[6])));
+            } else importedTeam.add(new Warrior(Integer.parseInt(importedAtr[1]), importedAtr[2], Integer.parseInt(importedAtr[3]),
+                    true, Integer.parseInt(importedAtr[5]), Integer.parseInt(importedAtr[6])));
+        }return importedTeam;
     }
 
 
