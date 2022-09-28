@@ -7,17 +7,57 @@ public class Battle {
 
 
 
-    public List<Player> fightRandom (Player player1, Player player2) {
-        List<Player> result = new ArrayList<>();
+    public List<Player> fightRandom (ArrayList<Player> teamA, ArrayList<Player> teamB) {
 
-        while (player1.isAlive() && player2.isAlive()) {
-            player1.attack(player2);
-            player2.attack(player1);
+        for(Player p : teamA){
+            System.out.println(p);
+        }
+        System.out.println("=======================");
+
+        for(Player p : teamB){
+            System.out.println(p);
+        }
+        System.out.println("=======================");
+
+
+        List<Player> graveyard = new ArrayList<>();
+        String winner = "";
+
+        while (teamA.size() > 0 && teamB.size() > 0){
+
+
+
+            Player player1 = teamA.get(0);
+            Player player2 = teamB.get(0);
+
+            while (player1.isAlive() && player2.isAlive()) {
+                player1.attack(player2);
+                player2.attack(player1);
+            }
+
+            if (!player1.isAlive()) {
+                graveyard.add(player1);
+                teamA.remove(player1);
+            };
+            if (!player2.isAlive()) {
+                graveyard.add(player2);
+                teamB.remove(player2);
+            }
+
+
+
+
         }
 
-        if (!player1.isAlive()) result.add(player1);
-        if (!player2.isAlive()) result.add(player2);
-        System.out.println(result.get(0));
-        return result;
+        if(teamA.size() == 0) winner = "teamB";
+        else winner = "teamA";
+
+        for(Player p : graveyard){
+            System.out.println( p.getName() + "is dead");
+        }
+        System.out.println("The winner is " + winner);
+        return graveyard;
+
+
     }
 }

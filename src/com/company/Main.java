@@ -41,9 +41,16 @@ public class Main {
         teamA.remove(1);
         ArrayList<Character> graveyard = new ArrayList<Character>();
         graveyard.add(deadCharacter);*/
+
+        inicio();
+
+    }
+
+    public static void inicio() throws FileNotFoundException {
         printMenu();
         int option = inputPlayer();
         actions(option);
+
     }
     public static void printMenu(){
         System.out.println("Bienvenido a la lucha");
@@ -61,21 +68,22 @@ public class Main {
             printMenu();
             choice = Integer.parseInt(inputScaner.nextLine());
         }
-        inputScaner.close();
         return choice;
     }
     public static void actions(int opc) throws FileNotFoundException {
-        List<Player> teamA;
-        List<Player> teamB;
+        ArrayList<Player> teamA;
+        ArrayList<Player> teamB;
+
         Battle battle = new Battle();
         switch(opc){
             case 0:
                 System.out.println("Gracias por paticipar");
                 break;
             case 1:
-                 teamA = TeamBuilder.createTeam();
-                 teamB = TeamBuilder.createTeam();
-                 battle.fightRandom(teamA.get(0), teamB.get(0));
+                teamA = TeamBuilder.createTeam();
+                teamB = TeamBuilder.createTeam();
+                battle.fightRandom(teamA, teamB);
+                inicio();
                 break;
             case 2:
                 teamA = TeamBuilder.importTeamCSV();
@@ -92,6 +100,3 @@ public class Main {
 
 
 }
-
-
-
