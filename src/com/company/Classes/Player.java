@@ -1,13 +1,15 @@
-package Classes;
+package com.company.Classes;
 
-public class Character {
+import com.company.Interfaces.Attacker;
 
-    public int id;
-    public String name;
-    public int hp;
-    public boolean isAlive;
+public abstract class Player implements Attacker {
 
-    public Character(int id, String name, int hp, boolean isAlive) {
+    private int id;
+    private String name;
+    private int hp;
+    private boolean isAlive;
+
+    public Player(int id, String name, int hp, boolean isAlive) {
         this.id = id;
         this.name = name;
         this.hp = hp;
@@ -43,7 +45,7 @@ public class Character {
     }
 
     public void setAlive(boolean alive) {
+
         isAlive = alive;
     }
-
 }

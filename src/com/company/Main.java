@@ -1,18 +1,24 @@
 package com.company;
 
-import Classes.Character;
-import Classes.Warrior;
-import Classes.Wizard;
+import com.company.Classes.Player;
+import com.company.Classes.TeamBuilder;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 
 public class Main {
     public static void main(String[] args) {
 
+        System.out.println("Enter your PJ Name");
+        Scanner scanner = new Scanner((System.in));
+        String player1 = scanner.nextLine();
+        System.out.println(player1);
 
-        ArrayList<Character> teamA = createTeam();
-        ArrayList<Character> teamB = createTeam();
+
+        ArrayList<Player> teamA = TeamBuilder.createTeam();
+        ArrayList<Player> teamB = TeamBuilder.createTeam();
 
         System.out.println("Team A" + teamA);
 
@@ -24,24 +30,13 @@ public class Main {
         ArrayList<Character> graveyard = new ArrayList<Character>();
         graveyard.add(deadCharacter);*/
 
+
+
     }
 
-    public static ArrayList<Character> createTeam(){
-        ArrayList<Character> team = new ArrayList<Character>();
 
-        for (int i = 0; i < 6; i++){
-            int hp = (int) (Math.random()*(80-10+1)+10);
-            int stamina = (int) (Math.random()*(50-10+1)+10);
-            int strength = (int) (Math.random()*(110-20+1)+10);
-            int mana = (int) (Math.random()*(90-15+1)+15);
-            int intelligence = (int) (Math.random()*(70-10+1)+10);
 
-            if (Math.random()< 0.5) {
-                team.add(new Warrior(i, "Gimli", hp, true, stamina, strength));
-            } else {
-                team.add(new Wizard(i, "Gandalf", hp, true, mana, intelligence));
-            }
-        }
-        return team;
-    }
 }
+
+
+
