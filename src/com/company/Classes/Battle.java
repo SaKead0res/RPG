@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Battle {
 
+
+
     public List<Player> fightRandom (Player player1, Player player2) {
         List<Player> result = new ArrayList<>();
 
@@ -15,6 +17,7 @@ public class Battle {
 
         if (!player1.isAlive()) result.add(player1);
         if (!player2.isAlive()) result.add(player2);
+        System.out.println(result.get(0));
         return result;
     }
 }

@@ -1,0 +1,7 @@
+Class, id, name, hp, isAlive, specialAtr, specialDmg
+Wizard, 0, 'LeBlanc', 39, true, 19, 12
+Wizard, 1, 'LeBlanc', 33, true, 15, 43
+Warrior, 2, 'Garen', 73, true, 16, 14
+Warrior, 3, 'Frozen', 43, true, 16, 39
+Warrior, 4, 'Lissandra', 68, true, 43, 59
+Warrior, 5, 'LeBlanc', 24, true, 32, 28
