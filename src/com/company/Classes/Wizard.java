@@ -44,12 +44,26 @@ public class Wizard extends Player implements Attacker {
     }
 
     @Override
-    public int attack() {
+    public int getNextAttackDamage() {
         if (getMana() >= 5) {
-            setMana(getMana() - 5);
             return getIntelligence();
         }
-        setMana(getMana() + 1);
         return 2;
+    }
+
+    private void spendMana() {
+        if (getMana() >= 5) {
+            setMana(getMana() - 5);
+        }
+        else {
+            setMana(getMana() + 1);
+        }
+    }
+
+    @Override
+    public void attack(Player player) {
+        spendMana();
+        player.setHp(player.getHp() - getNextAttackDamage());
+        if (player.getHp() <= 0) player.setAlive(false);
     }
 }

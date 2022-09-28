@@ -5,10 +5,16 @@ import com.company.Classes.TeamBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Main {
     public static void main(String[] args) {
+
+        System.out.println("Enter your PJ Name");
+        Scanner scanner = new Scanner((System.in));
+        String player1 = scanner.nextLine();
+        System.out.println(player1);
 
 
         ArrayList<Player> teamA = TeamBuilder.createTeam();
@@ -24,8 +30,13 @@ public class Main {
         ArrayList<Character> graveyard = new ArrayList<Character>();
         graveyard.add(deadCharacter);*/
 
+
+
     }
 
 
 
 }
+
+
+

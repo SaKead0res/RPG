@@ -1,6 +1,8 @@
 package com.company.Classes;
 
-public abstract class Player {
+import com.company.Interfaces.Attacker;
+
+public abstract class Player implements Attacker {
 
     private int id;
     private String name;
@@ -46,7 +48,4 @@ public abstract class Player {
 
         isAlive = alive;
     }
-
-    public abstract int attack();
-
 }
