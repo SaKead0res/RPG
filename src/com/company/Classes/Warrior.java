@@ -44,13 +44,26 @@ public class Warrior extends Player implements Attacker {
 
     }
 
-    @Override
-    public int attack() {
+    public int getNextAttackDamage() {
         if (getStamina() >= 5) {
-            setStamina(getStamina() - 5);
             return getStrength();
         }
-        setStamina(getStamina() + 1);
         return getStrength() / 2;
+    }
+
+    private void spendStamina() {
+        if (getStamina() >= 5) {
+            setStamina(getStamina() - 5);
+        }
+        else {
+            setStamina(getStamina() + 1);
+        }
+    }
+
+    @Override
+    public void attack(Player player) {
+        spendStamina();
+        player.setHp(player.getHp() - getNextAttackDamage());
+        if (player.getHp() <= 0) player.setAlive(false);
     }
 }

@@ -1,8 +1,9 @@
 package com.company.Interfaces;
 
+import com.company.Classes.Player;
+
 public interface Attacker {
 
-    int attack();
-
-
+    int getNextAttackDamage();
+    void attack(Player player);
 }
