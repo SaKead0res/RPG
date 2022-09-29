@@ -63,6 +63,6 @@ public class Warrior extends Player implements Attacker {
         spendStamina();
         player.setHp(player.getHp() - getNextAttackDamage());
         if (player.getHp() <= 0) player.setAlive(false);
-        System.out.println(getName() + " dealt " + (player.getHp() - getNextAttackDamage()) + " damage");
+        System.out.println(getName() + " dealt " + (player.getHp() - getNextAttackDamage()) + " damage.\n");
     }
 }

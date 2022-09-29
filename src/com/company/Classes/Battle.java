@@ -9,18 +9,23 @@ public class Battle {
 
     public List<Player> fightRandom (ArrayList<Player> teamA, ArrayList<Player> teamB) {
 
+        System.out.println("YOUR TEAM IS:\n");
         for(Player p : teamA){
             System.out.println(p);
         }
-        System.out.println("<-------------------------------->");
-        System.out.println("<-------------------------------->");
 
+        System.out.println("\n THE ENEMY'S TEAM IS:\n");
         for(Player p : teamB){
             System.out.println(p);
         }
 
+        System.out.println("\n");
+
         List<Player> graveyard = new ArrayList<>();
         String winner = "";
+
+        System.out.println("THE BATTLE STARTS!\n" +
+                "GOOD LUCK!\n");
 
         while (teamA.size() > 0 && teamB.size() > 0){
 
@@ -35,10 +40,22 @@ public class Battle {
             if (!player1.isAlive()) {
                 graveyard.add(player1);
                 teamA.remove(player1);
+                System.out.println("    /\n" +
+                        "O===[====================-\n" +
+                        "    \\");
+                for(Player p : graveyard){
+                    System.out.println( p.getName() + " is dead");
+                }
             };
             if (!player2.isAlive()) {
                 graveyard.add(player2);
                 teamB.remove(player2);
+                System.out.println("    /\n" +
+                "O===[====================-\n" +
+                "    \\");
+                for(Player p : graveyard){
+                    System.out.println( p.getName() + " is dead");
+                }
             }
         }
 
@@ -46,11 +63,6 @@ public class Battle {
             winner = "teamB";
         } else{
             winner = "teamA";
-        }
-        for(Player p : graveyard){
-            System.out.println("<-------------------------------->");
-            System.out.println("<-------------------------------->");
-            System.out.println( p.getName() + "is dead");
         }
         System.out.println("<-------------------------------->");
         System.out.println("<-------------------------------->");

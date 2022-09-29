@@ -10,7 +10,8 @@ public class TeamBuilder {
 
     public static ArrayList<Player> createTeam(){
 
-        List<String> randomName = new ArrayList<>(List.of("Gandalf", "Sauron", "Merlin", "Garen", "LeBlanc", "Lissandra", "Frozen", "Rafiki", "Judini"));
+        List<String> randomName = new ArrayList<>(List.of("Gandalf", "Sauron", "Merlin", "Garen", "LeBlanc",
+                "Lissandra", "Frozen", "Rafiki", "Judini"));
 
         ArrayList<Player> team = new ArrayList<Player>();
 
