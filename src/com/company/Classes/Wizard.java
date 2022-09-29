@@ -59,7 +59,6 @@ public class Wizard extends Player implements Attacker {
             setMana(getMana() + 1);
         }
     }
-
     @Override
     public void attack(Player player) {
         spendMana();

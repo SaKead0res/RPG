@@ -12,20 +12,17 @@ public class Battle {
         for(Player p : teamA){
             System.out.println(p);
         }
-        System.out.println("=======================");
+        System.out.println("<-------------------------------->");
+        System.out.println("<-------------------------------->");
 
         for(Player p : teamB){
             System.out.println(p);
         }
-        System.out.println("=======================");
-
 
         List<Player> graveyard = new ArrayList<>();
         String winner = "";
 
         while (teamA.size() > 0 && teamB.size() > 0){
-
-
 
             Player player1 = teamA.get(0);
             Player player2 = teamB.get(0);
@@ -43,21 +40,22 @@ public class Battle {
                 graveyard.add(player2);
                 teamB.remove(player2);
             }
-
-
-
-
         }
 
-        if(teamA.size() == 0) winner = "teamB";
-        else winner = "teamA";
-
+        if(teamA.size() == 0){
+            winner = "teamB";
+        } else{
+            winner = "teamA";
+        }
         for(Player p : graveyard){
+            System.out.println("<-------------------------------->");
+            System.out.println("<-------------------------------->");
             System.out.println( p.getName() + "is dead");
         }
+        System.out.println("<-------------------------------->");
+        System.out.println("<-------------------------------->");
         System.out.println("The winner is " + winner);
         return graveyard;
-
 
     }
 }

@@ -53,10 +53,15 @@ public class Main {
 
     }
     public static void printMenu(){
+        System.out.println("<-------------------------------->");
+        System.out.println("<-------------------------------->");
         System.out.println("Bienvenido a la lucha");
         System.out.println("pulsa 1 para empezar lucha");// devuelve un muerto
         System.out.println("pulsa 2 para crear tu equipo desde CSV");
         System.out.println("pulsa 0 para salir");
+        System.out.println("<-------------------------------->");
+        System.out.println("<-------------------------------->");
+
 
 //        System.out.println("7-)Salir");
     }
@@ -68,7 +73,7 @@ public class Main {
             printMenu();
             choice = Integer.parseInt(inputScaner.nextLine());
         }
-        return choice;
+              return choice;
     }
     public static void actions(int opc) throws FileNotFoundException {
         ArrayList<Player> teamA;
@@ -87,12 +92,12 @@ public class Main {
                 break;
             case 2:
                 teamA = TeamBuilder.importTeamCSV();
-                teamB = TeamBuilder.importTeamCSV();
+                teamB = TeamBuilder.createTeam();
+                battle.fightRandom(teamA, teamB);
+                inicio();
                 break;
 
-            case 3:
 
-                break;
 
         }
 

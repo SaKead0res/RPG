@@ -50,7 +50,6 @@ public class Warrior extends Player implements Attacker {
         }
         return getStrength() / 2;
     }
-
     private void spendStamina() {
         if (getStamina() >= 5) {
             setStamina(getStamina() - 5);
@@ -59,7 +58,6 @@ public class Warrior extends Player implements Attacker {
             setStamina(getStamina() + 1);
         }
     }
-
     @Override
     public void attack(Player player) {
         spendStamina();
