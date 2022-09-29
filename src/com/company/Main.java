@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.Classes.Battle;
 import com.company.Classes.Player;
+import com.company.Classes.Sonido;
 import com.company.Classes.TeamBuilder;
 
 import java.io.FileNotFoundException;
@@ -12,10 +13,13 @@ import java.util.concurrent.TimeUnit;
 
 
 public class Main {
+
+    private Sonido sonidito = new Sonido("resources/soundTwo.wav");
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
 
         inicio();
-
+        Sonido.loop()
+        .addActionListener((e)->sonidito.play());
     }
 
     public static void inicio() throws FileNotFoundException, InterruptedException {
@@ -51,7 +55,6 @@ public class Main {
         System.out.println("\nInsert 1 to start the fight! I'm gonna choose your team:");// devuelve un muerto
         System.out.println("Insert 2 if you want to create your team importing a CSV:");
         System.out.println("Insert 0 to quit the adventure:\n\n");
-
 
     }
     public static int inputPlayer() throws InterruptedException {
@@ -90,14 +93,9 @@ public class Main {
             default:
                 System.out.println("You didn't insert right the option.");
 
-
-
         }
 
-
-
     }
-
     public static void end() throws FileNotFoundException, InterruptedException {
 
         System.out.println("Not tired?\nDo you want to play again?");
