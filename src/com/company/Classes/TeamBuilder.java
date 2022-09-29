@@ -11,7 +11,10 @@ public class TeamBuilder {
     public static ArrayList<Player> createTeam(){
 
         List<String> randomName = new ArrayList<>(List.of("Gandalf", "Sauron", "Merlin", "Garen", "LeBlanc",
-                "Lissandra", "Frozen", "Rafiki", "Judini"));
+                "Lissandra", "Frozen", "Rafiki", "Judini", "Freya", "Valkyr", "Poppy", "Undertaker", "Shark",
+                "Gargamel", "Little Squire", "Hella", "Joane D'arc", "Gimli", "Dafne", "Xena", "Taric", "Predator",
+                "Sona", "Bobba Fett", "Leia", "Lilu", "Deadly Knife", "The Beast", "The Twins", "The Chef", "Pantina",
+                "Melanie", "Muffin", "Trynda", "Mason", "Lord Melner", "Captain Drake", "Minnie", "Drakus", "Pinthya"));
 
         ArrayList<Player> team = new ArrayList<Player>();
 
