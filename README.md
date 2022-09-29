@@ -1,31 +1,33 @@
 # RPG
-                                                      "  ___  ___ | | __| (_) ___ _ __ ___ \
-                                                      " / __|/ _ \\| |/ _` | |/ _ \\ '__/ __|\
-                                                      " \\__ \\ (_) | | (_| | |  __/ |  \\__ \\\
-                                                      " |___/\\___/|_|\\__,_|_|\\___|_|  |___/")
-                                                               O===[====================-     
-                                                _________________________________________________________
-                                              /|     -_-                                             _-  |\
-                                             / |_-_- _                                         -_- _-   -| \   
-                                               |                            _-  _--                      | 
-                                               |                            ,                            |
-                                               |      .-'````````'.        '(`        .-'```````'-.      |
-                                               |    .` |           `.      `)'      .` |           `.    |          
-                                               |   /   |   ()        \      U      /   |    ()       \   |
-                                               |  |    |    ;         | o   T   o |    |    ;         |  |
-                                               |  |    |     ;        |  .  |  .  |    |    ;         |  |
-                                               |  |    |     ;        |   . | .   |    |    ;         |  |
-                                               |  |    |     ;        |    .|.    |    |    ;         |  |
-                                               |  |    |____;_________|     |     |    |____;_________|  |  
-                                               |  |   /  __ ;   -     |     !     |   /     `'() _ -  |  |
-                                               |  |  / __  ()        -|        -  |  /  __--      -   |  |
-                                               |  | /        __-- _   |   _- _ -  | /        __--_    |  |
-                                               |__|/__________________|___________|/__________________|__|
-                                              /                                             _ -        lc \
-                                             /   -_- _ -             _- _---                       -_-  -_ \
+                                         "  ___  ___ | | __| (_) ___ _ __ ___ \
+                                        " / __|/ _ \\| |/ _` | |/ _ \\ '__/ __|\
+                                       " \\__ \\ (_) | | (_| | |  __/ |  \\__ \\\
+                                        " |___/\\___/|_|\\__,_|_|\\___|_|  |___/")
+                                         
+                                                 O===[====================-    
+                                                 
+                                   _________________________________________________________
+                                 /|     -_-                                             _-  |\
+                                / |_-_- _                                         -_- _-   -| \   
+                                  |                            _-  _--                      | 
+                                  |                            ,                            |
+                                  |      .-'````````'.        '(`        .-'```````'-.      |
+                                  |    .` |           `.      `)'      .` |           `.    |          
+                                  |   /   |   ()        \      U      /   |    ()       \   |
+                                  |  |    |    ;         | o   T   o |    |    ;         |  |
+                                  |  |    |     ;        |  .  |  .  |    |    ;         |  |
+                                  |  |    |     ;        |   . | .   |    |    ;         |  |
+                                  |  |    |     ;        |    .|.    |    |    ;         |  |
+                                  |  |    |____;_________|     |     |    |____;_________|  |  
+                                  |  |   /  __ ;   -     |     !     |   /     `'() _ -  |  |
+                                  |  |  / __  ()        -|        -  |  /  __--      -   |  |
+                                  |  | /        __-- _   |   _- _ -  | /        __--_    |  |
+                                  |__|/__________________|___________|/__________________|__|
+                                 /                                             _ -        lc \
+                                /   -_- _ -             _- _---                       -_-  -_ \
                                              
-         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
          
 #This is a simple text-based RPG battle game simulator which our team developed for a practice of a backend course written in Java.
 
@@ -36,11 +38,11 @@ We have two types of character, warrior and wizard, but they have different comb
 ##GAME STRUCTURE
 First, we need to create a Character class (that cannot be instantiated) that will contain base attributes. 
 
-                                                                        _  |~  _
-                                                                      [_]--'--[_]
-                                                                      |'|""`""|'|
-                                                                      | | /^\ | |
-                                                                      |_|_|I|_|_|
+                                                               _  |~  _
+                                                             [_]--'--[_]
+                                                             |'|""`""|'|
+                                                             | | /^\ | |
+                                                             |_|_|I|_|_|
 
 
 ##CLASSES 
@@ -55,15 +57,15 @@ isAlive - flag to determine if the Player is alive
 #Class Warrior:
 stamina - number to represent a resource the warrior consumes to make an attack
 strength - number to calculate how strong the warrior attack is       
-                                                                                    _
-                                                                                 __|=|__
-                                                                                (_/`-`\_)
-                                                                                //\___/\\
-                                                                                <>/   \<>
-                                                                                 \|_._|/
-                                                                                  <_I_>
-                                                                                   |||
-                                                                                  /_|_\
+                                                                       _
+                                                                    __|=|__
+                                                                   (_/`-`\_)
+                                                                   //\___/\\
+                                                                   <>/   \<>
+                                                                    \|_._|/
+                                                                     <_I_>
+                                                                      |||
+                                                                     /_|_\
    
                                
  
@@ -87,26 +89,26 @@ It's an abstract class from which our two types of characters, wizard and warrio
 Class TeamBuilder:
 Here we can create two complete random teams OR our user can choose to have one custom import CSV Team and fight to a random party.
  
-                                                                                                                                                         .-.
-                                                                                                                                                        (o-o) boo!
-                                                                                                                                                        |   \
-                                                                                                                                                         `~~~'===[x]
+                                                                                                         .-.
+                                                                                                        (o-o) boo!
+                                                                                                        |   \
+                                                                                                         `~~~'===[x]
 #Class Battle:
 Here we make player 1 fight player 2 if both of them are alive, the winner is returned to the array to continue playing till the other party finish them and the loser is removed to the array of their team and added to a graveyard void one.
                                                                                      
  
 ##INTERFACES
-                                                                                  .
-                                                                               .
-                                                                               O  o
+                           .
+                              .
+                          O  o
 
-                                                                              .  O
-                                                                               o
-                                                                               o   .
-                                                                            _________
-                                                                          c(`       ')o
-                                                                            \.     ,/
-                                                                          __//^---^\\__  
+                        .  O
+                             o
+                        o   .
+                       _________
+                     c(`       ')o
+                       \.     ,/
+                     __//^---^\\__  
                 
 
 #Interface Attacker:
@@ -114,9 +116,9 @@ Both wizards and warriors will have the same attack command defined by an interf
 We implement it in each Wizard and Warrior class, changing some attributes that are unique to their kind.
 
 
-                                                                   />_________________________________
-                                                          [########[]_________________________________ /
-                                                                   \>
+                                                          />_________________________________
+                                                [########[]_________________________________ /
+                                                          \> 
                                                                    
 ##How the battle simulator works
 The characters are grouped in parties and the battle will be between 2 parties. So before the battle could start, you need to add warriors or wizards in both parties.
@@ -125,9 +127,9 @@ When the battle is over, the winner will return to the party and the loser will 
 When a party lose all their members, a winner party is declared.
  
  
-                                                                   />_________________________________
-                                                          [########[]_________________________________ /
-                                                                   \> 
+                                                          />_________________________________
+                                                [########[]_________________________________ /
+                                                          \> 
  
  
 ##Character Attacks (ง'̀-'́)ง Q(x_xQ)
@@ -135,10 +137,9 @@ Warriors are strong, well armored characters that focus on the attribute strengt
 Wizards are the masters of the arcane, their main attribute is intelligence. Every round a wizard will try to cast a “Fireball”. The damage of a fireball is equals to his intelligence and every fireball will decrease their mana by 5 points. If he can’t cast a fireball, he will do a “Staff hit”. The damage of a staff hit is equals to 2. Every staff hit will recover his mana by 1.
 
 
-                                                                   />_________________________________
-                                                          [########[]_________________________________ /
-                                                                   \> 
- 
+                                                          />_________________________________
+                                                [########[]_________________________________ /
+                                                          \> 
  
 ##Requirements of the practice
 For this project you must accomplish all of the following:
@@ -156,8 +157,8 @@ Show the graveyard (is the same graveyard for both parties)
 The battle between parties and determines the winner.
 Keep a detailed log (on the standard output) of every action taken during the duels.
 
-          //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+          ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
