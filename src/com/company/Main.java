@@ -13,50 +13,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
-//        System.out.println( "  ___  ___ | | __| (_) ___ _ __ ___ \n" +
-//                " / __|/ _ \\| |/ _` | |/ _ \\ '__/ __|\n" +
-//                " \\__ \\ (_) | | (_| | |  __/ |  \\__ \\\n" +
-//                " |___/\\___/|_|\\__,_|_|\\___|_|  |___/");
-//        TimeUnit.MILLISECONDS.sleep(1000);
-//        System.out.println("\nWelcome to SOLDIERS, Commander! \n  Your adventure starts here.");
-//        TimeUnit.MILLISECONDS.sleep(2000);
-//        System.out.println("    First of all: \n");
-//        TimeUnit.MILLISECONDS.sleep(2000);
-//        System.out.println("- What's your name?");
-//        Scanner scannerName = new Scanner((System.in));
-//        String player1 = scannerName.nextLine();
-//        System.out.println("\nAha! " + player1 + " is a name of brave ancestors. \nWill se if you honor your name.\n");
-//        TimeUnit.MILLISECONDS.sleep(2000);
-//        System.out.println("A great war is coming. \n" +
-//                "Prepare your team for the battle.\n");
-//        TimeUnit.MILLISECONDS.sleep(1000);
-//        System.out.println("    /\n" +
-//                "O===[====================-\n" +
-//                "    \\");
-//        TimeUnit.MILLISECONDS.sleep(2000);
-//        System.out.println("\n- Insert 1 if you want to import a team with a .csv file \n" +
-//                "- Insert 2 if you want that I choose the team.\n");
-//        Scanner scannerChooseTeam = new Scanner((System.in));
-//        String choosedTeam = scannerChooseTeam.nextLine();
-//
-//        if (choosedTeam.equals("1")) {
-//            ArrayList<Player> teamC = TeamBuilder.importTeamCSV();
-//        } else {
-//            ArrayList<Player> teamA = TeamBuilder.createTeam();
-//        }
-//        TimeUnit.MILLISECONDS.sleep(2000);
-//        System.out.println("Team A" + teamA);
-//
-//
-//        ArrayList<Player> teamA = TeamBuilder.createTeam();
-//        ArrayList<Player> teamB = TeamBuilder.createTeam();
-//        ArrayList<Player> teamC = TeamBuilder.importTeamCSV();
-//
-//        System.out.println("Team A" + teamA);
-//
-//        System.out.println("Team B" + teamB);
-//
-//        System.out.println("Team C" + teamC);
 
         inicio();
 
@@ -73,18 +29,19 @@ public class Main {
                 " / __|/ _ \\| |/ _` | |/ _ \\ '__/ __|\n" +
                 " \\__ \\ (_) | | (_| | |  __/ |  \\__ \\\n" +
                 " |___/\\___/|_|\\__,_|_|\\___|_|  |___/");
-        TimeUnit.MILLISECONDS.sleep(1000);
+        TimeUnit.MILLISECONDS.sleep(2000);
         System.out.println("\nWelcome to SOLDIERS, Commander! \n  Your adventure starts here.");
-        TimeUnit.MILLISECONDS.sleep(2000);
+        TimeUnit.MILLISECONDS.sleep(1000);
         System.out.println("    First of all: \n");
-        TimeUnit.MILLISECONDS.sleep(2000);
+        TimeUnit.MILLISECONDS.sleep(1000);
         System.out.println("- What's your name?");
         Scanner scannerName = new Scanner((System.in));
         String player1 = scannerName.nextLine();
         System.out.println("\nAha! " + player1 + " is a name of brave ancestors. \nWill se if you honor your name.\n");
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("A great war is coming. \n" +
-                "Prepare your team for the battle.\n");
+        System.out.println("A great war is coming. \n");
+        TimeUnit.MILLISECONDS.sleep(1000);
+        System.out.println("Prepare your team for the battle.\n");
         TimeUnit.MILLISECONDS.sleep(1000);
         System.out.println("    /\n" +
                 "O===[====================-\n" +
@@ -95,8 +52,6 @@ public class Main {
         System.out.println("Insert 0 to quit the adventure:\n\n");
 
 
-
-//        System.out.println("7-)Salir");
     }
     public static int inputPlayer() throws InterruptedException {
         Scanner inputScaner = new Scanner(System.in);
