@@ -1,14 +1,15 @@
-package com.company;
-
-import com.company.Classes.Menu;
+package com.company.Classes;
 
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.Sequencer;
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 
+public class PlayMidiAudio {
 
-public class Main {
-    public static void main(String[] args) throws Exception, FileNotFoundException, InterruptedException {
+    public static void main(String[] args) throws Exception {
 
         // Obtains the default Sequencer connected to a default device.
         Sequencer sequencer = MidiSystem.getSequencer();
@@ -18,7 +19,7 @@ public class Main {
         sequencer.open();
 
         // create a stream from a file
-        InputStream is = new BufferedInputStream(new FileInputStream(new File("src/IoGcstle.mid")));
+        InputStream is = new BufferedInputStream(new FileInputStream(new File("IoGcstle.mid")));
 
         // Sets the current sequence on which the sequencer operates.
         // The stream must point to MIDI file data.
@@ -27,8 +28,5 @@ public class Main {
         // Starts playback of the MIDI data in the currently loaded sequence.
         sequencer.start();
 
-        Menu.inicio();
-
     }
-
 }

@@ -15,35 +15,41 @@ public class Menu {
         actions(option);
     }
     public static void printMenu() throws InterruptedException {
-        System.out.println( "  ___  ___ | | __| (_) ___ _ __ ___ \n" +
+
+
+        System.out.println((char)27 + "[40m" + "  ___  ___ | | __| (_) ___ _ __ ___ \n" +
                 " / __|/ _ \\| |/ _` | |/ _ \\ '__/ __|\n" +
                 " \\__ \\ (_) | | (_| | |  __/ |  \\__ \\\n" +
-                " |___/\\___/|_|\\__,_|_|\\___|_|  |___/");
+                " |___/\\___/|_|\\__,_|_|\\___|_|  |___/\n\n" + (char)27 + "[0m");
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("\nWelcome to SOLDIERS, Commander! \n");
+        System.out.println("Welcome to SOLDIERS, Commander! \n");
         TimeUnit.MILLISECONDS.sleep(1000);
-        System.out.println(   "Your adventure starts here.");
+        System.out.print(   "Your adventure starts HERE.");
         TimeUnit.MILLISECONDS.sleep(1000);
-        System.out.println("    First of all: \n");
+        System.out.println(" First of all: \n");
         TimeUnit.MILLISECONDS.sleep(1000);
         System.out.println("- What's your name?");
         Scanner scannerName = new Scanner((System.in));
         String player1 = scannerName.nextLine();
-        System.out.println("\nAha! \n" + player1 + " is a name of brave ancestors. \n");
+        System.out.print("\nAHA! Good one! ");
+        TimeUnit.MILLISECONDS.sleep(1500);
+        System.out.println((char)27 + "[33m" + player1.toUpperCase() + (char)27 + "[0m" +
+                " is a name of BRAVE ancestors. \n");
         TimeUnit.MILLISECONDS.sleep(1000);
-        System.out.println("Will see if you honor your name.\n");
+        System.out.println("We need YOU to COMMAND our forces.");
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("A great war is coming. \n");
-        TimeUnit.MILLISECONDS.sleep(1000);
-        System.out.println("Prepare your team for the battle.\n");
+        System.out.println("A great war is coming.");
+        TimeUnit.MILLISECONDS.sleep(1500);
+        System.out.println("COME ON " + (char)27 + "[33m" +
+                player1.toUpperCase() + (char)27 + "[0m" +"!! Go and prepare your TEAM for the BATTLE!\n");
         TimeUnit.MILLISECONDS.sleep(1000);
         System.out.println("    /\n" +
                 "O===[====================-\n" +
-                "    \\");
-        TimeUnit.MILLISECONDS.sleep(1000);
-        System.out.println("\nInsert 1 to start the fight! I'm gonna choose your team:");// devuelve un muerto
+                "    \\ \n");
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println((char)27 + "[40m" + "Insert 1 to start the fight! I'm gonna choose your team:");// devuelve un muerto
         System.out.println("Insert 2 if you want to create your team importing a CSV:");
-        System.out.println("Insert 0 to quit the adventure:\n\n");
+        System.out.println("Insert 0 to quit the adventure:\n"+ (char)27 + "[0m");
     }
     public static int inputPlayer() throws InterruptedException {
         Scanner inputScaner = new Scanner(System.in);
@@ -52,16 +58,16 @@ public class Menu {
             choice = Integer.parseInt(inputScaner.nextLine());
         } catch (NumberFormatException e) {
             System.err.println("Not a valid option. Try again:");
-            System.out.println("\nInsert 1 to start the fight! I'm gonna choose your team:");// devuelve un muerto
+            System.out.println((char)27 + "[40m" + "Insert 1 to start the fight! I'm gonna choose your team:");// devuelve un muerto
             System.out.println("Insert 2 if you want to create your team importing a CSV:");
-            System.out.println("Insert 0 to quit the adventure:\n\n");
+            System.out.println("Insert 0 to quit the adventure:\n"+ (char)27 + "[0m");
             inputPlayer();
         }
         while(choice < 0 || choice > 2){
             System.err.println("Not a valid option. Try again:");
-            System.out.println("\nInsert 1 to start the fight! I'm gonna choose your team:");// devuelve un muerto
+            System.out.println((char)27 + "[40m" + "Insert 1 to start the fight! I'm gonna choose your team:");// devuelve un muerto
             System.out.println("Insert 2 if you want to create your team importing a CSV:");
-            System.out.println("Insert 0 to quit the adventure:\n\n");
+            System.out.println("Insert 0 to quit the adventure:\n"+ (char)27 + "[0m");
             choice = Integer.parseInt(inputScaner.nextLine());
         }return choice;
     }
@@ -71,8 +77,25 @@ public class Menu {
         Battle battle = new Battle();
         switch(opc){
             case 0:
-                System.out.println("Thank you for playing.\n" +
-                        "We gonna miss you!!! <3");
+                System.out.println((char)27 + "[40m" + "                                                |>>>\n" +
+                        "                                                |\n" +
+                        "                                            _  _|_  _\n" +
+                        "                                           |;|_|;|_|;|\n" +
+                        "                                           \\\\.    .  /\n" +
+                        "                                            \\\\:  .  /\n" +
+                        "                                             ||:   |\n" +
+                        "                                             ||:.  |\n" +
+                        "                                             ||:  .|\n" +
+                        "                                             ||:   |       \\,/\n" +
+                        "                                             ||: , |            /`\\\n" +
+                        "                                             ||:   |\n" +
+                        "                                             ||: . |\n" +
+                        "              __                            _||_   |\n" +
+                        "     ____--`~    '--~~__            __ ----~    ~`---,              ___\n" +
+                        "-~--~                   ~---__ ,--~'                  ~~----_____-~'   `~----~~\n" +
+                        (char)27 + "[0m");
+                System.out.println((char)27 + "[35m" + "THANK YOU FOR PLAYING.     WE GONNA MISS YOU!!! <3" +
+                        "            THE END." + (char)27 + "[0m");
                 break;
             case 1:
                 teamA = TeamBuilder.createTeam();
@@ -91,19 +114,42 @@ public class Menu {
         }
     }
 
+
     public static void end() throws FileNotFoundException, InterruptedException {
-        System.out.println("Not tired?\nDo you want to play again?");
-        System.out.println("\n- Insert 0 to quit the game. (coward)");
-        System.out.println("\n- Insert 1 to play another battle!");
-        Scanner inputScaner = new Scanner(System.in);
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("\n" + (char)27 + "[40m" + "     Not tired?\nDo you want to play again?");
+        System.out.println("<---------------------------------------->");
+        System.out.println("- Insert 0 to quit the game. (coward)");
+        System.out.println("\n- Insert 1 to play another battle!\n" + (char)27 + "[0m");
+        Scanner inputScaner = new Scanner(System.in);  //AQUI HACE FALTA UN TRY CATCH
         int choice = Integer.parseInt(inputScaner.nextLine());
         if (choice == 0) {
-            System.out.println("Thank you for playing.\n" +
-                    "We gonna miss you!!! <3");
-            System.out.println("\n    THE END.");
+            System.out.println((char)27 + "[40m" + "                                                |>>>\n" +
+                    "                                                |\n" +
+                    "                                            _  _|_  _\n" +
+                    "                                           |;|_|;|_|;|\n" +
+                    "                                           \\\\.    .  /\n" +
+                    "                                            \\\\:  .  /\n" +
+                    "                                             ||:   |\n" +
+                    "                                             ||:.  |\n" +
+                    "                                             ||:  .|\n" +
+                    "                                             ||:   |       \\,/\n" +
+                    "                                             ||: , |            /`\\\n" +
+                    "                                             ||:   |\n" +
+                    "                                             ||: . |\n" +
+                    "              __                            _||_   |\n" +
+                    "     ____--`~    '--~~__            __ ----~    ~`---,              ___\n" +
+                    "-~--~                   ~---__ ,--~'                  ~~----_____-~'   `~----~~\n" +
+                    (char)27 + "[0m");
+            System.out.println((char)27 + "[35m" + "THANK YOU FOR PLAYING.     WE GONNA MISS YOU!!! <3" +
+                    "            THE END." + (char)27 + "[0m");
         } else if (choice == 1) {
-            inicio();
+            System.out.println("\nInsert 1 to start the fight! I'm gonna choose your team:");// devuelve un muerto
+            System.out.println("Insert 2 if you want to create your team importing a CSV:");
+            System.out.println("Insert 0 to quit the adventure:");
+            inputPlayer();
         }
+
     }
 
 }
