@@ -49,7 +49,7 @@ public class Battle {
                 }
                 System.out.println("Press Intro to continue:");
                 Scanner scannerPause = new Scanner((System.in));
-//                String s = scannerName.nextLine();
+                scannerPause.nextLine();
             };
             if (!player2.isAlive()) {
                 graveyard.add(player2);
@@ -60,6 +60,9 @@ public class Battle {
                 for(Player p : graveyard){
                     System.out.println( p.getName() + " is dead");
                 }
+                System.out.println("Press Intro to continue:");
+                Scanner scannerPause = new Scanner((System.in));
+                scannerPause.nextLine();
             }
         }
 
