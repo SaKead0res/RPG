@@ -13,16 +13,13 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
-
         inicio();
-
     }
 
     public static void inicio() throws FileNotFoundException, InterruptedException {
         printMenu();
         int option = inputPlayer();
         actions(option);
-
     }
     public static void printMenu() throws InterruptedException {
         System.out.println( "  ___  ___ | | __| (_) ___ _ __ ___ \n" +
@@ -30,14 +27,18 @@ public class Main {
                 " \\__ \\ (_) | | (_| | |  __/ |  \\__ \\\n" +
                 " |___/\\___/|_|\\__,_|_|\\___|_|  |___/");
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("\nWelcome to SOLDIERS, Commander! \n  Your adventure starts here.");
+        System.out.println("\nWelcome to SOLDIERS, Commander! \n");
+        TimeUnit.MILLISECONDS.sleep(1000);
+        System.out.println(   "Your adventure starts here.");
         TimeUnit.MILLISECONDS.sleep(1000);
         System.out.println("    First of all: \n");
         TimeUnit.MILLISECONDS.sleep(1000);
         System.out.println("- What's your name?");
         Scanner scannerName = new Scanner((System.in));
         String player1 = scannerName.nextLine();
-        System.out.println("\nAha! " + player1 + " is a name of brave ancestors. \nWill se if you honor your name.\n");
+        System.out.println("\nAha! \n" + player1 + " is a name of brave ancestors. \n");
+        TimeUnit.MILLISECONDS.sleep(1000);
+        System.out.println("Will see if you honor your name.\n");
         TimeUnit.MILLISECONDS.sleep(2000);
         System.out.println("A great war is coming. \n");
         TimeUnit.MILLISECONDS.sleep(1000);
@@ -46,27 +47,34 @@ public class Main {
         System.out.println("    /\n" +
                 "O===[====================-\n" +
                 "    \\");
-        TimeUnit.MILLISECONDS.sleep(2000);
+        TimeUnit.MILLISECONDS.sleep(1000);
         System.out.println("\nInsert 1 to start the fight! I'm gonna choose your team:");// devuelve un muerto
         System.out.println("Insert 2 if you want to create your team importing a CSV:");
         System.out.println("Insert 0 to quit the adventure:\n\n");
-
-
     }
     public static int inputPlayer() throws InterruptedException {
         Scanner inputScaner = new Scanner(System.in);
-        int choice = Integer.parseInt(inputScaner.nextLine());
-        while(choice < 0 || choice > 2){
-            System.out.println("Incorrect Option");
-            printMenu();
+        int choice = -1;
+        try {
             choice = Integer.parseInt(inputScaner.nextLine());
+        } catch (NumberFormatException e) {
+            System.err.println("Not a valid option. Try again:");
+            System.out.println("\nInsert 1 to start the fight! I'm gonna choose your team:");// devuelve un muerto
+            System.out.println("Insert 2 if you want to create your team importing a CSV:");
+            System.out.println("Insert 0 to quit the adventure:\n\n");
+            inputPlayer();
         }
-              return choice;
+        while(choice < 0 || choice > 2){
+            System.err.println("Not a valid option. Try again:");
+            System.out.println("\nInsert 1 to start the fight! I'm gonna choose your team:");// devuelve un muerto
+            System.out.println("Insert 2 if you want to create your team importing a CSV:");
+            System.out.println("Insert 0 to quit the adventure:\n\n");
+            choice = Integer.parseInt(inputScaner.nextLine());
+        }return choice;
     }
     public static void actions(int opc) throws FileNotFoundException, InterruptedException {
         ArrayList<Player> teamA;
         ArrayList<Player> teamB;
-
         Battle battle = new Battle();
         switch(opc){
             case 0:
@@ -74,7 +82,6 @@ public class Main {
                         "We gonna miss you!!! <3");
                 break;
             case 1:
-
                 teamA = TeamBuilder.createTeam();
                 teamB = TeamBuilder.createTeam();
                 battle.fightRandom(teamA, teamB);
@@ -87,18 +94,11 @@ public class Main {
                 end();
                 break;
             default:
-                System.out.println("You didn't insert right the option.");
-
-
-
+                break;
         }
-
-
-
     }
 
     public static void end() throws FileNotFoundException, InterruptedException {
-
         System.out.println("Not tired?\nDo you want to play again?");
         System.out.println("\n- Insert 0 to quit the game. (coward)");
         System.out.println("\n- Insert 1 to play another battle!");
@@ -110,9 +110,6 @@ public class Main {
             System.out.println("\n    THE END.");
         } else if (choice == 1) {
             inicio();
-
         }
-//
     }
-
 }
