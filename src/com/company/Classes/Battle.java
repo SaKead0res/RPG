@@ -2,6 +2,7 @@ package com.company.Classes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Battle {
 
@@ -46,6 +47,9 @@ public class Battle {
                 for(Player p : graveyard){
                     System.out.println( p.getName() + " is dead");
                 }
+                System.out.println("Press Intro to continue:");
+                Scanner scannerPause = new Scanner((System.in));
+//                String s = scannerName.nextLine();
             };
             if (!player2.isAlive()) {
                 graveyard.add(player2);

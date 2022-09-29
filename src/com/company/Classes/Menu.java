@@ -1,25 +1,15 @@
-package com.company;
-
-import com.company.Classes.Battle;
-import com.company.Classes.Menu;
-import com.company.Classes.Player;
-import com.company.Classes.TeamBuilder;
+package com.company.Classes;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+public class Menu {
 
-public class Main {
-    public static void main(String[] args) throws FileNotFoundException, InterruptedException {
-<<<<<<< HEAD
-        inicio();
-    }
+
 
     public static void inicio() throws FileNotFoundException, InterruptedException {
-
         printMenu();
         int option = inputPlayer();
         actions(option);
@@ -114,8 +104,6 @@ public class Main {
         } else if (choice == 1) {
             inicio();
         }
-=======
-        Menu.inicio();
->>>>>>> 8b1e3bc70e0fbed54c21c5d1fbb66fb6e07d1595
     }
+
 }
