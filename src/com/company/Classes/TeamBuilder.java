@@ -19,9 +19,10 @@ public class TeamBuilder {
         ArrayList<Player> team = new ArrayList<Player>();
 
         //el jugador puede escoger tamaño equipo
-        for (int i = 0; i < 6; i++){
+        for (int i = 0; i < 6; i++){ //Lo de la sobrecarga de la consola se podria solucionar tambien reduciendo el equipo
             int hp = (int) (Math.random()*(80-10+1)+10);
-            int stamina = (int) (Math.random()*(50-10+1)+10);
+            int stamina = (int) (Math.random()*(50-10+1)+10); // de verdad que estaria muy bien que la HP fuera mas alta,
+            // y la inteligencia y la fuerza mas baja. ahora practicamente atacan una sola vez y mueren ambos
             int strength = (int) (Math.random()*(110-20+1)+10);
             int mana = (int) (Math.random()*(90-15+1)+15);
             int intelligence = (int) (Math.random()*(70-10+1)+10);
