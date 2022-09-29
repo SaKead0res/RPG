@@ -63,6 +63,7 @@ public class Main {
     }
 
     public static void inicio() throws FileNotFoundException, InterruptedException {
+
         printMenu();
         int option = inputPlayer();
         actions(option);
