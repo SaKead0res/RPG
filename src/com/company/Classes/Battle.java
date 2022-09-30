@@ -44,8 +44,7 @@ public class Battle {
                 player2.attack(player1);
             }
 
-            if (!player1.isAlive()) {  //MOLARIA QUE HUBIERA GRAVEYARD A Y GRAVEYARD B PARA IMPRIMIRLOS SEPARADOS
-                // NO SE APELOTONARIAN TANTO; PODRIAN SER DE DIFERENTE COLOR, Y CREO QUE ES FACIL. PERO NECESITO AYUDA
+            if (!player1.isAlive()) {
                 graveyard.add(player1);
                 teamA.remove(player1);
                 TimeUnit.MILLISECONDS.sleep(2000);
@@ -55,7 +54,6 @@ public class Battle {
                         "     |R.I.P|   //  /  /     |S|\n" +
                         (char)27 + "[32m" + "\\vV,,|_____|V,//_____/VvV,v,|_|/,,vv/," + (char)27 + "[0m");
                 for(Player p : graveyard){
-                    // Comentado el codigo de colores porque tal como esta hecho se acumula
                     System.out.print(/*(char)27 + "[34m" + */"((" + p.getName()/* + (char)27  + "[0m"*/ + "- DEAD))   ");
                 }
                 System.out.println("\n" + (char)27 + "[34m" + "AN ALLY DIED!  ⎧ᴿᴵᴾ⎫ ◟◟◟◟◟◟◟◟  ❀◟(ó ̯ ò, )" +
@@ -74,7 +72,6 @@ public class Battle {
                         "     |R.I.P|   //  /  /     |S|\n" +
                         (char)27 + "[32m" + "\\vV,,|_____|V,//_____/VvV,v,|_|/,,vv/," + (char)27 + "[0m");
                 for(Player p : graveyard){
-                    // Comentado el codigo de colores porque tal como esta hecho se acumula
                     System.out.print(/*(char)27 + "[31m" +*/"((" + p.getName()/* + (char)27 + "[0m"*/ + "- DEAD))   ");
                 }
                 System.out.println("\n" + (char)27 + "[31m" + "AN ENEMY DIED! ⤜( ͡ಥل͜ ͡ಥ)⤏" + (char)27 + "[0m");

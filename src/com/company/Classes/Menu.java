@@ -116,12 +116,12 @@ public class Menu {
 
 
     public static void end() throws FileNotFoundException, InterruptedException {
-        TimeUnit.MILLISECONDS.sleep(2000);
+        TimeUnit.MILLISECONDS.sleep(1000);
         System.out.println("\n" + (char)27 + "[40m" + "     Not tired?\nDo you want to play again?");
         System.out.println("<---------------------------------------->");
         System.out.println("- Insert 0 to quit the game. (coward)");
         System.out.println("\n- Insert 1 to play another battle!\n" + (char)27 + "[0m");
-        Scanner inputScaner = new Scanner(System.in);  //AQUI HACE FALTA UN TRY CATCH
+        Scanner inputScaner = new Scanner(System.in);
         int choice = -1;
         try{
             choice = Integer.parseInt(inputScaner.nextLine());
@@ -156,7 +156,7 @@ public class Menu {
             System.out.println((char)27 + "[35m" + "THANK YOU FOR PLAYING.     WE GONNA MISS YOU!!! <3" +
                     "            THE END." + (char)27 + "[0m");
         } else if (choice == 1) {
-            System.out.println("\nInsert 1 to start the fight! I'm gonna choose your team:");// devuelve un muerto
+            System.out.println("\nInsert 1 to start the fight! I'm gonna choose your team:");
             System.out.println("Insert 2 if you want to create your team importing a CSV:");
             System.out.println("Insert 0 to quit the adventure:");
             inputPlayer();

@@ -9,7 +9,7 @@ import java.io.InputStream;
 
 public class PlayMidiAudio {
 
-    public static void main(String[] args) throws Exception {
+    public static void playAudio() throws Exception {
 
         // Obtains the default Sequencer connected to a default device.
         Sequencer sequencer = MidiSystem.getSequencer();
@@ -19,7 +19,7 @@ public class PlayMidiAudio {
         sequencer.open();
 
         // create a stream from a file
-        InputStream is = new BufferedInputStream(new FileInputStream(new File("IoGcstle.mid")));
+        InputStream is = new BufferedInputStream(new FileInputStream(new File("src/IoGcstle.mid")));
 
         // Sets the current sequence on which the sequencer operates.
         // The stream must point to MIDI file data.
