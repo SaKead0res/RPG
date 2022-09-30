@@ -56,8 +56,10 @@ public class Battle {
                         (char)27 + "[32m" + "\\vV,,|_____|V,//_____/VvV,v,|_|/,,vv/," + (char)27 + "[0m");
                 for(Player p : graveyard){
                     // Comentado el codigo de colores porque tal como esta hecho se acumula
-                    System.out.println(/*(char)27 + "[34m" + */p.getName()/* + (char)27  + "[0m"*/ + "- DEAD");
+                    System.out.print(/*(char)27 + "[34m" + */"((" + p.getName()/* + (char)27  + "[0m"*/ + "- DEAD))   ");
                 }
+                System.out.println("\n" + (char)27 + "[34m" + "AN ALLY DIED!  ⎧ᴿᴵᴾ⎫ ◟◟◟◟◟◟◟◟  ❀◟(ó ̯ ò, )" +
+                        (char)27 + "[0m");
                 System.out.println("Press Intro to continue:");
                 Scanner scannerPause1 = new Scanner((System.in));
                 scannerPause.nextLine();
@@ -73,8 +75,9 @@ public class Battle {
                         (char)27 + "[32m" + "\\vV,,|_____|V,//_____/VvV,v,|_|/,,vv/," + (char)27 + "[0m");
                 for(Player p : graveyard){
                     // Comentado el codigo de colores porque tal como esta hecho se acumula
-                    System.out.println(/*(char)27 + "[31m" +*/ p.getName()/* + (char)27 + "[0m"*/ + "- DEAD");
+                    System.out.print(/*(char)27 + "[31m" +*/"((" + p.getName()/* + (char)27 + "[0m"*/ + "- DEAD))   ");
                 }
+                System.out.println("\n" + (char)27 + "[31m" + "AN ENEMY DIED! ⤜( ͡ಥل͜ ͡ಥ)⤏" + (char)27 + "[0m");
                 System.out.println("Press Intro to continue:");
                 Scanner scannerPause2 = new Scanner((System.in));
                 scannerPause.nextLine();
@@ -82,12 +85,23 @@ public class Battle {
         }
 
         if(teamA.size() == 0){
-            winner = (char)27 + "[31m" + "        YOUR TEAM LOSE.\n" +
-                    (char)27 + "[0m" + "I knew that you couldn't handle it.\n" +
+            winner = (char)27 + "[31m" + "        YOUR TEAM LOSE.\n  __\n" +
+                    "/_/\\/\\\n" +
+                    "\\_\\  /\n" +
+                    "/_/  \\\n" +
+                    "\\_\\/\\ \\\n" +
+                    "   \\_\\/" +
+                    (char)27 + "[0m" + "\nI knew that you couldn't handle it.\n" +
                     "You have to practice more in the field.\n";
         } else{
-            winner = (char)27 + "[34m" + "               YOU WIN!!\n" +
-                    (char)27 + "[0m" + "I BELIEVED IN YOUR SKILLS FROM THE BEGGINING!\n" +
+            winner = (char)27 + "[34m" + "               YOU WIN!!\n          o \n" +
+                    "       o^/|\\^o\n" +
+                    "    o_^|\\/*\\/|^_o\n" +
+                    "   o\\*`'.\\|/.'`*/o\n" +
+                    "    \\\\\\\\\\\\|//////\n" +
+                    "     {><><@><><}\n" +
+                    "     `\"\"\"\"\"\"\"\"\"`" +
+                    (char)27 + "[0m" + "\nI BELIEVED IN YOUR SKILLS FROM THE BEGGINING!\n" +
                     "YOU DESERVE THE BEST OF THE PARTIES!\n";
         }
         System.out.println("\n" + winner);

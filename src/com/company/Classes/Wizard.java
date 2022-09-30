@@ -67,7 +67,7 @@ public class Wizard extends Player implements Attacker {
         player.setHp(player.getHp() - getNextAttackDamage());
         if (player.getHp() <= 0) player.setAlive(false);
         TimeUnit.MILLISECONDS.sleep(1000);
-        System.out.println((char)27 + "[31m" + "(∩ꖘ_ꖘ)⊃━☆ﾟ.*:☆ﾟ:(☉ѽ☉)" + (char)27 + "[0m");
+        System.out.println((char)27 + "[40m" + "(∩ꖘ_ꖘ)⊃━☆ﾟ.*:☆ﾟ:(☉ѽ☉)" + (char)27 + "[0m");
         System.out.println(getName() + " dealt " + (player.getHp() - getNextAttackDamage()) + " damage.\n");
     }
 }
