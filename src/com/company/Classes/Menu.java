@@ -122,7 +122,19 @@ public class Menu {
         System.out.println("- Insert 0 to quit the game. (coward)");
         System.out.println("\n- Insert 1 to play another battle!\n" + (char)27 + "[0m");
         Scanner inputScaner = new Scanner(System.in);  //AQUI HACE FALTA UN TRY CATCH
-        int choice = Integer.parseInt(inputScaner.nextLine());
+        int choice = -1;
+        try{
+            choice = Integer.parseInt(inputScaner.nextLine());
+        } catch (NumberFormatException e) {
+            System.err.println("Not a valid option. Try again:");
+            end();
+        }
+
+        while(choice < 0 || choice > 1){
+            System.err.println("Not a valid option. Try again:");
+            end();
+        }
+
         if (choice == 0) {
             System.out.println((char)27 + "[40m" + "                                                |>>>\n" +
                     "                                                |\n" +
