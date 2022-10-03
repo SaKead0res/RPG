@@ -156,10 +156,7 @@ public class Menu {
             System.out.println((char)27 + "[35m" + "THANK YOU FOR PLAYING.     WE GONNA MISS YOU!!! <3" +
                     "            THE END." + (char)27 + "[0m");
         } else if (choice == 1) {
-            System.out.println("\nInsert 1 to start the fight! I'm gonna choose your team:");
-            System.out.println("Insert 2 if you want to create your team importing a CSV:");
-            System.out.println("Insert 0 to quit the adventure:");
-            inputPlayer();
+            Menu.inicio();
         }
 
     }
