@@ -35,13 +35,10 @@ public class Warrior extends Player implements Attacker {
 
     @Override
     public String toString() {
-        return "\n Warrior{" +
-                "id=" + getId() +
-                ", name='" + getName() + '\'' +
-                ", hp=" + getHp() +
-                ", isAlive=" + isAlive() +
-                ", stamina=" + stamina +
-                ", strength=" + strength +
+        return "\n" + getId() + " Warrior{-"+ getName() +
+                "- HP= " + getHp() +
+                ", Stamina= " + stamina +
+                ", Strength= " + strength +
                 '}';
 
     }
@@ -66,7 +63,7 @@ public class Warrior extends Player implements Attacker {
         player.setHp(player.getHp() - getNextAttackDamage());
         if (player.getHp() <= 0) player.setAlive(false);
         TimeUnit.MILLISECONDS.sleep(1000);
-        System.out.println("               " + (char)27 + "[40m" + "༼ಥل͟ಥ༽▬ι═════>-════ι▬(•̀_•́ผ)" + (char)27 + "[0m");
-        System.out.println("               " + getName() + " dealt " + (player.getHp() - getNextAttackDamage()) + " damage.\n");
+        System.out.println((char)27 + "[40m" + "༼ಥل͟ಥ༽▬ι═════>-════ι▬(•̀_•́ผ)" + (char)27 + "[0m");
+        System.out.println(getName() + " dealt " + (player.getNextAttackDamage()) + " damage.\n");
     }
 }

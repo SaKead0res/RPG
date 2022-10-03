@@ -15,7 +15,7 @@ public class Battle {
         for(Player p : teamA){
             System.out.println(p);
         }
-        TimeUnit.MILLISECONDS.sleep(3000);
+        TimeUnit.MILLISECONDS.sleep(2000);
         System.out.println("<-----------------------------VS-------------------------->");
         System.out.println((char)27 + "[31m" + "THE ENEMY'S TEAM IS:");
         for(Player p : teamB){
@@ -47,16 +47,16 @@ public class Battle {
             if (!player1.isAlive()) {
                 graveyard.add(player1);
                 teamA.remove(player1);
-                TimeUnit.MILLISECONDS.sleep(2000);
+                TimeUnit.MILLISECONDS.sleep(1500);
                 System.out.println("      ,-=-.       ______     _\n" +
                         "     /  +  \\     />----->  _|1|_\n" +
                         "     | ~~~ |    // -/- /  |_ H _|\n" +
                         "     |R.I.P|   //  /  /     |S|\n" +
-                        (char)27 + "[32m" + "\\vV,,|_____|V,//_____/VvV,v,|_|/,,vv/," + (char)27 + "[0m");
+                        (char)27 + "[32m" + "\\vV,," + (char)27 + "[0m" + "|_____|" + (char)27 + "[32m" + "V," + (char)27 + "[0m" + "//_____/" + (char)27 + "[32m" + "VvV,v," + (char)27 + "[0m" + "|_|" + (char)27 + "[32m" + "/,,vv/," + (char)27 + "[0m");
                 for(Player p : graveyard){
-                    System.out.print(/*(char)27 + "[34m" + */"((" + p.getName()/* + (char)27  + "[0m"*/ + "- DEAD))   ");
+                    System.out.print(/*(char)27 + "[34m" + */"((" + p.getName()/* + (char)27  + "[0m"*/ + "))   ");
                 }
-                System.out.println("\n" + (char)27 + "[34m" + "AN ALLY DIED!  ⎧ᴿᴵᴾ⎫ ◟◟◟◟◟◟◟◟  ❀◟(ó ̯ ò, )" +
+                System.out.println("\n" + (char)27 + "[31m" + player2.getName() + " killed " + player1.getName() + "\n⎧ᴿᴵᴾ⎫ ❀◟(ó ̯ ò, )" +
                         (char)27 + "[0m");
                 System.out.println("Press Intro to continue:");
                 Scanner scannerPause1 = new Scanner((System.in));
@@ -65,16 +65,16 @@ public class Battle {
             if (!player2.isAlive()) {
                 graveyard.add(player2);
                 teamB.remove(player2);
-                TimeUnit.MILLISECONDS.sleep(2000);
+                TimeUnit.MILLISECONDS.sleep(1500);
                 System.out.println("      ,-=-.       ______     _\n" +
                         "     /  +  \\     />----->  _|1|_\n" +
                         "     | ~~~ |    // -/- /  |_ H _|\n" +
                         "     |R.I.P|   //  /  /     |S|\n" +
-                        (char)27 + "[32m" + "\\vV,,|_____|V,//_____/VvV,v,|_|/,,vv/," + (char)27 + "[0m");
+                        (char)27 + "[32m" + "\\vV,," + (char)27 + "[0m" + "|_____|" + (char)27 + "[32m" + "V," + (char)27 + "[0m" + "//_____/" + (char)27 + "[32m" + "VvV,v," + (char)27 + "[0m" + "|_|" + (char)27 + "[32m" + "/,,vv/," + (char)27 + "[0m");
                 for(Player p : graveyard){
-                    System.out.print(/*(char)27 + "[31m" +*/"((" + p.getName()/* + (char)27 + "[0m"*/ + "- DEAD))   ");
+                    System.out.print(/*(char)27 + "[31m" +*/"((" + p.getName()/* + (char)27 + "[0m"*/ + "))   ");
                 }
-                System.out.println("\n" + (char)27 + "[31m" + "AN ENEMY DIED! ⤜( ͡ಥل͜ ͡ಥ)⤏" + (char)27 + "[0m");
+                System.out.println("\n" + (char)27 + "[34m" + player1.getName() + " killed " + player2.getName() + "\n⤜( ͡ಥل͜ ͡ಥ)⤏" + (char)27 + "[0m");
                 System.out.println("Press Intro to continue:");
                 Scanner scannerPause2 = new Scanner((System.in));
                 scannerPause.nextLine();
